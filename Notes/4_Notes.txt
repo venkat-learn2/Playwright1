@@ -1,0 +1,11 @@
+Locating Elements in Playwright
+================================
+
+1.property,
+2.css,
+3.xpath
+
+to fetch any locator from the web page  - await page.locator('locator').click();
+                                        - await page.click('locator');  
+
+locate multiple elelments - await page.$$(locator)                                        

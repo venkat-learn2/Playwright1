@@ -1,0 +1,5 @@
+Hard & Soft Assertions
+======================
+
+1.Hard Assertions failed that will terminate the code
+2.Soft Assertions if failed it will continue to execute the remaining code

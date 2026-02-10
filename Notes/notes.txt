@@ -1,0 +1,67 @@
+1.Playwright is used for end to end web automation testing.
+
+Playwright
+=========
+
+playwright supported Applications - Web browser apps , mobile Web apps , API
+Playwright supported language - JS , TS , JAVA , Python and .Net
+Browser supported - Chromium ,Webkit(safari), Firefox(headed/headless mode) - by default headed mode 
+Chromium browsers - opera , brave , chrome , edge , apple 
+Operatings system supported - Windows , MacOS , Linux , Support CI Runs (We can run virtual env jenkins cicd any)
+
+Features:
+=========
+1.Free and open source
+2.multi-language , multi-browser , multi-os ,
+3.Easy setup and configuration
+4.Functional , API , Accessability Testing 
+5.Build-in Reports , custom Reports also available
+6.CI Env supports and Docker
+7.Parallel Testing - no need 3rd party library
+8.Auto Wait (Build-in waiting) wait for page loading
+9.Built-in Assertions - no need 3rd party validation library
+10.Multi tab and Multi Window support
+11.Frames , Shadow DOM Elements , 
+12.Test parameter
+13.Emulate Mobile Device
+14.Fast Compare to Selenium
+15.Tracing - test retry strategy , capture execution trace , screenshots , videos to eliminate flaky tests
+
+Flaky tests
+==========
+tests that failed on the first run, but passed when retried;unstable execution of test cases
+
+Installtion
+===========
+NodeJS
+NPM
+Create Project Folder
+Install Playwright 
+
+Using Terminal
+==============
+for create new project 
+
+npm init playwright@latest
+
+to check the installed playwright version
+
+npm playwright -v
+
+playwright.config.js - to change config of playwright settings
+tests - our test cases needs to be written inside that
+
+run playwright tests
+=====================
+to run entire test cases - by default playwright will execute all the tests in headless mode
+
+npx playwright test
+
+to run headed = npx playwright test --headed
+to show the report = npx playwright show-report (HTML report)
+
+
+
+
+
+

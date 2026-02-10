@@ -1,0 +1,21 @@
+TEST GENERATOR
+==============
+
+To generate playwright code automatically we will use codegen in the playwright
+
+
+npx playwright codegen
+
+npx playwright codegen --help 
+
+create with new file 
+
+npx playwright codegen -o tests/mytestcodegen.spec.js
+
+npx playwright codegen --target javascript - for spefic language
+
+npx playwright codegen -b chromium - for spefic browsers 
+
+npx playwright codegen --device "iPhone 13" - for mobile device ex.iphone 
+
+npx playwright codegen --viewport-size "1280,720"

@@ -1,0 +1,5 @@
+Assertions
+===========
+
+// hard assertion - if any assertions failed then code not executed further
+// soft assertion - if any assertions rest of the code will execute fruther

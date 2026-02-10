@@ -1,0 +1,20 @@
+How to create and run playwright tests
+=======================================
+
+2 ways to create a tests
+========================
+
+1. Codegen - tests generator
+2. Writing Our Own Script
+
+Executing Script:
+=================
+1. npx playwright test - run all the tests on all browsers in headless mode
+2. npx playwright test HomePageTest.spec.js - run a spefic test file 
+3. npx playwright test HomePageTest.spec.js --project=chromium - runs on a spefic browsers
+4. npx playwright test HomePageTest.spec.js --project=chromium --headed - runs on a headed mode 
+5. npx playwright test HomePageTest.spec.js --project=chromium --headed --debug - runs on a headed mode and debug mode
+
+
+
+
