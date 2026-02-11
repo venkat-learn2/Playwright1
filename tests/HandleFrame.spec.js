@@ -1,0 +1,23 @@
+const { test, expect } = require('@playwright/test');
+
+test('Handle iframes', async ({ page }) => {
+    await page.goto(`https://ui.vision/demo/webtest/frames/`);
+
+    // total frames
+
+    const allFrames = await page.frames();
+    console.log(allFrames.length, '9');
+
+    // approach 1 - using name or url of the frame
+    // const frame1 = await page.frame('name');// if name is availalbe
+    // const frame1 = await page.frame({ url: `https://ui.vision/demo/webtest/frames/frame_1.html` });
+    // await frame1.fill("input[name='mytext1']", "Hello");
+
+    // approach 2 - using frame locator
+    const inputbox = await page.frameLocator(`//frame[@src='frame_1.html']`).locator(`input[name='mytext1']`);
+    await inputbox.fill('Hello');
+
+    await page.waitForTimeout(5000)
+
+
+})
