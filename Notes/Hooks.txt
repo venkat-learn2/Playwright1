@@ -1,0 +1,8 @@
+playwright hooks
+===============
+
+1.before Each : this hooks is executed before each individual test.
+2.after Each : this hook is executed after each individual test.
+
+3.Before All : this hook is executed once before any of the tests starts running
+4.After All : this hook is executed once after all the test have been run .
