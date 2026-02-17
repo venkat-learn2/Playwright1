@@ -1,0 +1,5 @@
+1.passed  - no retry
+2.failed - retry - failed
+3.failed - retry - passed - flaky test
+
+npx playwright test --retries=3

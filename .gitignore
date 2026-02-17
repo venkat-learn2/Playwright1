@@ -1,8 +1,54 @@
-
-# Playwright
+# =========================
+# Dependencies
+# =========================
 node_modules/
-/test-results/
-/playwright-report/
-/blob-report/
-/playwright/.cache/
-/playwright/.auth/
+
+# =========================
+# Playwright Generated Files
+# =========================
+test-results/
+playwright-report/
+
+# =========================
+# Allure Reports
+# =========================
+allure-results/
+allure-report/
+
+# =========================
+# Test Result Files
+# =========================
+results.json
+results.xml
+
+# =========================
+# Logs
+# =========================
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =========================
+# Environment Files
+# =========================
+.env
+.env.*
+
+# =========================
+# OS Generated Files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# IDE / Editor Files
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# Temporary Files
+# =========================
+*.tmp
+*.temp
