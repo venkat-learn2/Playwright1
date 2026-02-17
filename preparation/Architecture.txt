@@ -1,0 +1,16 @@
+selenium
+========
+1. In selenium each and every request (action) we have make request from client and server then server return a response.
+2. if u r making 100 actions it will send 100 request and and return 100 response each and every it will make a connnection establish and disconennected.
+3. HTTP Protocol
+4. for each and every request connnection will be terminated(that is why its takes more time)
+5. http - uni directional Protocol
+
+Playwright
+==========
+1.your client and server will connect via web socket Protocol.
+2.Once connnection establish you can send n number request to the playwright server.(handshake)
+3.handshake means both entitiy are connected client and server.
+4.once connection is disconennected either client or server that time only connection will terminated.
+5.Web sockets -  bi-directional Protocol.
+6.test and playwright server communication happens via web sockets Protocol

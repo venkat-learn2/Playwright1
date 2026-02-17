@@ -1,0 +1,198 @@
+1.What is playwright and why ?
+
+    > open source end to end testing framework for web browsers (Chromium,firefox,Webkit),
+
+Advantages:
+        > Auto waiting mechanism(no flaky test)
+        > Built in trace viewer , screenshots , videos 
+        > Support Multiple Languages(TS,JS,JAVA,Python),
+        > Headless and Headed Mode
+        > Network Inception and API Testing ()
+==================================================================================================        
+2.What are the browsers Support by playwright?
+        > Chromium
+        > firefox
+        > Webkit(Safari)
+        > Chrome , Edge , Opera 
+==================================================================================================        
+3.How to install playwright?
+        > npm init playwright@latest - prefer this ans 
+        > npm install -D @playwright@latest followed by npx playwright install 
+==================================================================================================        
+4.playwright vs selenium 
+
+        > Features   - playwright    - selenium
+        > Auto waiting - Built-in    - manual waits needed
+        > browsers Communication - Dev tool protocal - Webdriver
+        > Speed        - Faster  - Slow
+        > API Testing  - Supported - Not Supported
+        > Network Inception - BuiltIn - Requires Add tools
+        > Installation - simple - complex 
+==================================================================================================        
+5.Programming Languages that supports 
+        > JAVA , Python , .NET , C# and Widely Used for Javascript and Typescript most stable also
+
+==================================================================================================        
+6.Why use Typescript with playwright ?
+        > type safety (compile-time error detection)
+        > Intellisense support (better code completion)
+        > Self Documenting Code 
+        > Easier Refactoring
+        > Better Tooling support
+==================================================================================================        
+7.How to Configure Typescript in playwright?
+
+==================================================================================================        
+8.
+
+==================================================================================================        
+9.What are the different locators strategies?
+        > page.getByRole() to locate by explicit and implicit accessibility attributes.
+        >page.getByText() to locate by text content.
+        >page.getByLabel() to locate a form control by associated label's text.
+        >page.getByPlaceholder() to locate an input by placeholder.
+        >page.getByAltText() to locate an element, usually image, by its text alternative.
+        >page.getByTitle() to locate an element by its title attribute.
+        >page.getByTestId() 
+        > Also use CSS and Xpath selectors
+==================================================================================================        
+10.what is recommeded locator strategy?
+
+        > Role based locators
+        > They align with accessibility standard
+        > more resilient to UI Changes 
+        > example - await page.getByRole('button',{'name:'Submit'}).click();
+==================================================================================================        
+11.How do you interact with elements?
+        > click(),fill(),type(),selectOption(),check(),uncheck(),dbclick(),
+        > await page.locator('#element').click({button:'right'}),
+        > await page.locator('#element).hover();
+
+==================================================================================================        
+12. what is the difference between fill() and type()?
+
+        > fill - clears the exisiting text and enter text in one go (faster)
+        > type - types charaters one by one (simulates real user typing)
+
+==================================================================================================        
+13. How does playwright auto waiting works ?
+
+    Playwright automatically waits for elements to be 
+        > Atttached to DOM,
+        > Visible
+        > Enabled or Not
+        > Stable or not before perform any actions(no animations no flickering no ui issue's)
+        > Default time out - 30 Seconds
+
+==================================================================================================        
+14. How do you handle explicit waits ?
+
+        >await page.waitforSelector(`#elements`,{state:'Visible',timeout:5000})
+==================================================================================================        
+15. How do you set different timeout levels ?
+
+        > if page navigation is there we need to give 60 Seconds
+        > playwright.config.js file inside the use object navigationTimeout - 60000
+===================================================================================================
+16. What is browser , context , page in playwright?
+        
+        >Browser = Apartment Building
+        Context = Individual Flat
+        Page = Room inside the flat
+
+        > BROWSER - A browser instance that Playwright launches. - example: Chromium,Chrome,firefox
+        > const browser = await chromium.launch();
+        > One browser may have many contexts
+
+        > BROWSER CONTEXT - A fresh isolated session inside the browser.
+            > Each context has:    
+                Separate cookies    
+                Separate cache    
+                Separate storage    
+                Separate login session
+
+            👉 Works like Incognito window.
+
+        > const context = await browser.newContext();
+
+        > Multiple users testing simultaneously
+
+        > Parallel execution
+
+        > No session conflict
+
+        > - PAGE - A single browser tab where automation happens.
+
+            > This is where you:
+
+               > Click
+
+               > Type    
+
+               > Navigate
+
+               > Assert
+        const page = await context.newPage();
+        await page.goto("https://example.com");       
+
+        > Playwright uses browser contexts to provide test isolation without launching multiple browsers, which improves performance
+
+================================================================================
+17.How do you handle dropdown in playwright ?
+
+    > await page.locator(`//select[@id='country']`).selectOption({ label: 'Australia' }); // Label or Visible Text
+    > await page.locator(`//select[@id='country']`).selectOption('Australia');//Visible Text
+    > await page.locator(`//select[@id='country']`).selectOption({value:'usa'});// using value
+    > await page.locator(`//select[@id='country']`).selectOption({index:7});// using index 
+    > await page.selectOption(`//select[@id='country']`,'India') // by text only
+
+================================================================================
+18.How to you handle alerts in playwright ? 
+
+        > playwright handles alerts using dialog event.
+        > We can accept , dismiss or provide input to alerts without switching context
+        > Auto waiting makes alert simple and reliable
+
+        >   await page.on('dialog', async dialog => {
+            await expect(dialog.type()).toContain('alert');
+            await expect(dialog.message()).toContain('I am an alert box!');
+            await dialog.accept();
+            })
+
+================================================================================
+19.How to you handle multiple tabs in playwright ?
+
+        > we have to create separate pages for each url if we waiting
+        const page1 = await context.newPage() // own page creation way
+        const page2 = await context.newPage();
+================================================================================
+20.What is playwright rest runner ? 
+        > by default playwright has its own built-in test runner
+        > it helps organiza,execute and report test efficiently
+        > it supports Parallel execution ,fixtures ,retries,cross browser testing
+================================================================================
+21. How do you handle authentication in playwright ? 
+        > we can handle auth using storage state 
+        > Login is done once and session is reused across tests.
+        > this is saves times and improves performance
+
+==================================================================================================
+22.What is storage state ? 
+        > storeageState is used to save and restore browser storage such as cookies and local storage 
+        > it allows tests to reuse authenticated sessions without repeating login steps
+        > 
+==================================================================================================
+23.How do you handle file download ?|
+        >  const [download] = await Promise.all([
+            page.waitForEvent('download')
+            page.click('#element')
+        ])
+        await download.saveAs("downloads.pdf")
+==================================================================================================
+24. What is POM in playwright ?
+        > POM in playwright is a design pattern that separates locators and page ations from the logic 
+        > it organizes tests for better maintability , redability and reusability 
+        
+==================================================================================================
+25.
+
