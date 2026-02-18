@@ -194,5 +194,13 @@ Advantages:
         > it organizes tests for better maintability , redability and reusability 
         
 ==================================================================================================
-25.
+25.What are the some debugging tools in playwright ?
+
+        > Trace viewer
+        > screenshots and Videos 
+        > Playwright Inspect Mode
+        > page.pause()
+
+==================================================================================================
+
 
