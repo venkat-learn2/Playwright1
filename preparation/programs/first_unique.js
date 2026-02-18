@@ -1,10 +1,15 @@
 function firstUnique(str) {
-    for (let char of str) {
-        if (str.indexOf(char) === str.lastIndexOf(char)) {
-            return char;
-        }
-    }
-    return null;
+  const map = {};
+
+  for (let ch of str) {
+    map[ch] = (map[ch] || 0) + 1;
+  }
+
+  for (let ch of str) {
+    if (map[ch] === 1) return ch;
+  }
+
+  return null;
 }
 
-console.log(firstUnique("hhello"));
+console.log(firstUnique("automation")); // u
