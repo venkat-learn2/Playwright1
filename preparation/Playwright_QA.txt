@@ -202,5 +202,82 @@ Advantages:
         > page.pause()
 
 ==================================================================================================
+25.How Do We Handle Data in Playwright?
+        > Using test Data like variable
+        > Using JSON Files
+        > Using ENV Variables
+        > Using Params 
+==================================================================================================
+26.Exceptions in Playwright
+        > Timeout Error - Element is not visible 
+        > Locator error - strict mode violation
+        > Navigation error - page not loaded 
+        > Assertions error - expected value not received 
+==================================================================================================
+27.How to handle Exception 
+        > try catch method 
 
+        try {
+                await page.click('#login');
+        } catch (error) {
+                console.log("Error:", error.message);
+        }
+==================================================================================================
+28.Can We Have Multiple Config Files in Playwright?
 
+        >playwright.config.dev.js
+        >playwright.config.prod.js
+
+        > run like this - npx playwright test --config=playwright.config.dev.js
+==================================================================================================
+29.Types of Waits in Playwright ?
+                
+        Auto Wait (default)
+
+        Explicit wait (waitFor methods) - await page.waitForSelector('#loginBtn');
+
+        Timeout configuration
+
+        waitForLoadState
+==================================================================================================
+30. How to design playwright framework from scratch ? 
+        
+        Yes, I have designed a Playwright framework from scratch using Page Object Model.
+The structure includes:
+
+        >Page classes for locators & actions
+
+        >Test files for scenarios
+
+        >Utilities for common functions
+
+        >Fixtures for reusable setup
+
+        >Config for environments
+==================================================================================================
+31. API Testing Status Code 
+
+        1. 2XX - success code 
+                1. 200 - OK - Request Successful  - GET 
+                2. 201 - Created - Resource Created - POST
+                3. 202 - Accepted - Request Accepted , processing Later - 
+                4. 204 - No Content - Succcess but no response - DELETE
+
+        2.3XX - Redirection Code 
+                1. 301 - permanet Redirect
+                2. 302 - Temporary Redirect 
+                3. 304 - Not Modified (cache issue)
+        
+        3. 4XX - Client Erros 
+                1. 400 - Bad Request - Invalid Input - Missing Required field 
+                2. 401 - Unauthorized - Auth Required - no token 
+                3. 403 - Access denied - role restriction
+                4. 404 - Not Found - Wrong Endpoint
+                5. 405 - Wrong HTTP Method - POST instead of GET
+                6. 409 - Conflict - Duplicate Data
+                
+        4. 5XX - Server Erros 
+                1. 500 - Internal Server - Server crashed - code issue 
+                2. 502 - Bad Gateway - Microservice error 
+                3. 503 - Service Unavailable - Maintainance
+                4. 504 - Gateway timeout - Slow backend 

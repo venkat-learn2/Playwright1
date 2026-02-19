@@ -1,0 +1,99 @@
+1. API Testing Status Code 
+
+        1. 2XX - success code 
+                1. 200 - OK - Request Successful  - GET 
+                2. 201 - Created - Resource Created - POST
+                3. 202 - Accepted - Request Accepted , processing Later - 
+                4. 204 - No Content - Succcess but no response - DELETE
+
+        2.3XX - Redirection Code 
+                1. 301 - permanet Redirect
+                2. 302 - Temporary Redirect 
+                3. 304 - Not Modified (cache issue)
+        
+        3. 4XX - Client Erros 
+                1. 400 - Bad Request - Invalid Input - Missing Required field 
+                2. 401 - Unauthorized - Auth Required - no token 
+                3. 403 - Access denied - role restriction
+                4. 404 - Not Found - Wrong Endpoint
+                5. 405 - Wrong HTTP Method - POST instead of GET
+                6. 409 - Conflict - Duplicate Data
+                7. 429 - Too many requests → rate limit exceeded.
+                
+        4. 5XX - Server Erros 
+                1. 500 - Internal Server - Server crashed - code issue 
+                2. 502 - Bad Gateway - Microservice error 
+                3. 503 - Service Unavailable - Maintainance
+                4. 504 - Gateway timeout - Slow backend 
+======================================================================================
+3️⃣ Difference between PUT vs PATCH?
+
+PUT → Updates entire resource
+PATCH → Updates only specific fields
+
+======================================================================================
+5️⃣ What is an endpoint?
+
+URL where API is accessed.
+Example:
+
+https://api.test.com/users
+======================================================================================
+7️⃣ What is a request and response?
+
+Request → Sent by client
+Response → Returned by server
+======================================================================================
+8️⃣ What are headers in API?
+
+Provide metadata:
+
+Authorization
+
+Content-Type
+
+Accept
+======================================================================================
+11️⃣ What all should be validated in API testing?
+
+Interview golden answer:
+
+✔ Status code
+✔ Response body
+✔ Headers
+✔ Response time
+✔ Data correctness
+======================================================================================
+12️⃣ What is authentication in APIs?
+
+Verifying identity of the user.
+
+Types:
+
+Basic Auth
+
+Bearer Token
+
+OAuth
+
+API Key
+======================================================================================
+13️⃣ What is authorization?
+
+Checking permissions after authentication.
+======================================================================================
+16️⃣ What is idempotent API?
+
+Calling multiple times gives same result.
+
+Examples:
+GET, PUT, DELETE
+======================================================================================
+17️⃣ What is API chaining?
+
+Using response from one API as input for another
+======================================================================================
+9️⃣ What is rate limiting?
+
+Restricting number of API calls.
+======================================================================================
