@@ -14,3 +14,37 @@ Playwright
 4.once connection is disconennected either client or server that time only connection will terminated.
 5.Web sockets -  bi-directional Protocol.
 6.test and playwright server communication happens via web sockets Protocol
+
+4 layers
+=========
+1.TEST layer (your code) - js code , uses playwright test runner , contains test cases and assertions 
+2. Playwright Client(Node.js process) - runs in nodejs , interprets your commands like click(),goto(),sends instrction to the browser()
+3. Browser server(driver process) - when test starts , 1.Playwright launches a browser instance,2. A WebSocket connection is established
+                                    3.Commands are sent via this connection
+4.Browser engine - Playwright supports:
+
+Chromium (Chrome, Edge)
+Firefox
+WebKit (Safari engine)
+=============
+It communicates directly with:
+==============
+Chrome DevTools Protocol (CDP) for Chromium
+Custom protocols for Firefox and WebKit
+
+This makes it:
+=============
+Faster
+More stable
+Less flaky
+
+Playwright uses a client-server architecture where Node.js test scripts communicate 
+directly with browser engines through WebSocket connections, enabling fast, reliable, and parallel automation.
+
+Test Script
+     ↓
+Playwright Test Runner (Node.js)
+     ↓
+Browser Instance (Chromium/Firefox/WebKit)
+     ↓
+Web Application

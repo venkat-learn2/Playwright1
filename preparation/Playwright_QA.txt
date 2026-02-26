@@ -87,7 +87,8 @@ Advantages:
 ==================================================================================================        
 14. How do you handle explicit waits ?
 
-        >await page.waitforSelector(`#elements`,{state:'Visible',timeout:5000})
+        >await page.waitforSelector(`#elements`,{state:'Visible',timeout:5000});
+        > await page.waitforTimeout() // for static
 ==================================================================================================        
 15. How do you set different timeout levels ?
 
@@ -168,8 +169,14 @@ Advantages:
 ================================================================================
 20.What is playwright rest runner ? 
         > by default playwright has its own built-in test runner
-        > it helps organiza,execute and report test efficiently
-        > it supports Parallel execution ,fixtures ,retries,cross browser testing
+        > 1️⃣ Parallel Execution - Runs test files in parallel using workers.
+        > 2️⃣ Fixtures - Built-in fixtures like page, browser, context
+        > 3. Hooks 
+        > 4. retries
+        > 5. Reporting- HTML , JSON , Line 
+        > 6. debugging - Trace viewer , screenshots , videos
+
+        playwright is automation library whereas playwright test runner is the framework 
 ================================================================================
 21. How do you handle authentication in playwright ? 
         > we can handle auth using storage state 
@@ -190,7 +197,7 @@ Advantages:
         await download.saveAs("downloads.pdf")
 ==================================================================================================
 24. What is POM in playwright ?
-        > POM in playwright is a design pattern that separates locators and page ations from the logic 
+        > POM in playwright is a design pattern that separates locators and page actions from the logic 
         > it organizes tests for better maintability , redability and reusability 
         
 ==================================================================================================
