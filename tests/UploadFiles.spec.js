@@ -36,3 +36,4 @@ test.skip('Multiple Files', async ({ page }) => {
     expect(await page.locator('#fileList li:nth-child(1)')).toHaveText('No Files Selected')
     await page.waitForTimeout(5000);
 })
+

@@ -214,6 +214,13 @@ Advantages:
         > Using JSON Files
         > Using ENV Variables
         > Using Params 
+
+        I manage test data using a combination of static JSON files for reusable data and dynamic data generation for unique test cases. 
+        For complex scenarios, I prefer API-based data setup to reduce UI dependency and improve test speed. 
+        I also ensure tests are independent and parallel-safe by avoiding shared data. 
+        In CI/CD environments, I use environment-based configurations and implement 
+        proper cleanup strategies to maintain test stability.
+
 ==================================================================================================
 26.Exceptions in Playwright
         > Timeout Error - Element is not visible 
@@ -262,29 +269,86 @@ The structure includes:
 
         >Config for environments
 ==================================================================================================
-31. API Testing Status Code 
+31. How do you take a screenshots in playwright ? 
+        > playwright supports page level and local level screenshots
+        > page.screenshots() and page.locator.screenshots()
+        > for video recording need to config inside playwright.config.js file 
+        > for screenshots also we can do the in the use object in the config file 
+        > page.screenshots({path:'screenshots.png'})
+        > page.screenshots({path:'tests/screenshots/file2',fullPage:true});
+        > page.locator.screenshots({path:'tests/screenshots/file3',fullPage:true})
+==================================================================================================
+32.Assertions in playwright
+        1.Generic Assertions - Value Based 
+                >toBe() - Exact Match - expect(value).toBe(10);
+                > toEqual() - Deep Equality(object/array) - expect(obj).toEqual({id:1})
+                > toContain() - Partial Match Text  - expect(text).contain('success')
+                > toBeTruthy()/ toBeFalsy() - expect(isActive).toBeTruthy()
+                > toBeNull() - expect(value).toBeNull
+                > toBeGreaterThan() / toBeLessThan() - expect(count).toBeGreaterThan(5)
 
-        1. 2XX - success code 
-                1. 200 - OK - Request Successful  - GET 
-                2. 201 - Created - Resource Created - POST
-                3. 202 - Accepted - Request Accepted , processing Later - 
-                4. 204 - No Content - Succcess but no response - DELETE
+        2. Location Assertios - these are auto waiting assertions 
+                > tobeVisible() - await page.expect(locator).tobeVisible();
+                > tobeHidden() - await page.expect(locator).tobeHidden();
+                > toHaveText() - await page.expect(locator).toHaveText('expected') - exact text 
+                > toContainText() - await expect(locator).toContainText() - partial text matches 
+                > toHaveCount() - await expect(locator).toHaveCount(10) - count 
+                > toHaveAttribute() - await expect(locator).toHaveAttribute('type',text);
+                > toHaveCSS() - await expect(locator).toHaveCSS("color":"rgb(0,0,0)");
+                > toHaveClass() - await expect(locator).toHaveClass("active")
+                > toBeEnabled() - await expect(locator).toBeEnabled() 
+                > toBeDisabled() - await expect(locator).toBeDisabled()
+                > toBeChecked() - await expect(locator).toBeChecked()
+                > toBeFocused() - await expect(locator).toBeFocused()
 
-        2.3XX - Redirection Code 
-                1. 301 - permanet Redirect
-                2. 302 - Temporary Redirect 
-                3. 304 - Not Modified (cache issue)
+        3.Page Assertions
+                > toHaveURL() - await expect(page).toHaveURL('htttps://example.com/');
+                > toHaveTitle() - await expect(page).toHaveTitle("Dahsboard");
+==================================================================================================
+33. Explain Async and Await 
+        > async keyword will make sure function will return the promise
+        > await keyword will make sure it will wait for the promise
+==================================================================================================
+34. How do you handle frames ?
+        > A Frame is a webpage inside another webpage.you cannot access element inside the iframe directly.
+        Example1:
+        > await page.frameLocator('#frameId').locator('input[name='username']').fill('venkat');
+        Example2:
+        > const frame = page.frame({name:'frameName'});
+          await frame.fill("input[name='username']",'"Venkat");
+        Example3:
+        > await page.frameLocator("#outerframeID").frameLocator("#innerFrameID").locator('#submit').click();
+============================================================================================================
+35.How do you Handle Network Interception ?
+
+        > Validate API calls
+
+        > Mock API responses
+
+        > Block unwanted requests
+
+        > Test error scenarios
+============================================================================================================
+36.What is a Flaky Test?
+
+        > A Flaky tests is a test , sometimes passes , sometimes failes without any code changes 
+        > mainly caused by timing issues , network delays , dynamic elements , test data conflicts , environment instability
+        Root cause: will check step by step 
+        First, I identify the root cause instead of increasing timeouts. 
+        Most flaky tests are due to synchronization issues, unstable locators, or test data conflicts. 
+        I rely on Playwright’s auto-waiting assertions, proper network waits, and stable selectors like data-testid. 
+        I ensure tests are independent and parallel-safe. As a last step, I use retries in CI,
+         but only after fixing the root issue. My goal is to make tests deterministic and reliable.
+
+        > Identify flaky tests by analyzing test results over time and looking for patterns of failure.
+
+        > Use logging and screenshots to gather more information about the test failures.
+
+        > Implement retries for tests that fail intermittently, but limit the number of retries to avoid masking issues.
+
+        > Refactor tests to isolate dependencies and reduce environmental factors that may cause flakiness.
+
+        > Collaborate with developers to understand the application behavior and address underlying issues.
+============================================================================================================
+37.
         
-        3. 4XX - Client Erros 
-                1. 400 - Bad Request - Invalid Input - Missing Required field 
-                2. 401 - Unauthorized - Auth Required - no token 
-                3. 403 - Access denied - role restriction
-                4. 404 - Not Found - Wrong Endpoint
-                5. 405 - Wrong HTTP Method - POST instead of GET
-                6. 409 - Conflict - Duplicate Data
-                
-        4. 5XX - Server Erros 
-                1. 500 - Internal Server - Server crashed - code issue 
-                2. 502 - Bad Gateway - Microservice error 
-                3. 503 - Service Unavailable - Maintainance
-                4. 504 - Gateway timeout - Slow backend 

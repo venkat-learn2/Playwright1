@@ -1,0 +1,37 @@
+1.Javascript array methods 
+===========================
+    > push() - add elements to the end of the array
+    > pop() - removes the last element 
+    > shift() - removes the first element 
+    > unshift() - add elements to starting of the array 
+    > map() - creating new array by transforming elements()
+    > filter() - returns elements that match a condition 
+    > reduce() - reduces array to a single value 
+    > forEach() - loops through array no returns - undefined
+    > find() - returns first matching element 
+    > findIndex() - returns the index of the first match 
+    > includes() - check if the value exists 
+    > indexOf() - returns index of element if not returns -1
+    > slice() - return portion of the array (no changes in original)
+    > splice() - add removes/elements(modifies the original)
+    > concat() - Merge Arrays 
+    > join() - converts arrays to string 
+    > sort() - to make ascending order 
+    > reverse() - reverses the arrray 
+    > every() - check if all the elements satisfy condition - returns true or false
+    > some() - checks if atleast one satisfies the condition - returns true or false
+=====================================================================================================
+2.Javascript String methods 
+    >includes()
+    > slice()
+    > split()
+    > replace()
+    > replaceAll()
+    > trim()
+    > IndexOf()
+    > StartsWith()
+    > EndsWith()
+    > toUpperCase()
+    > toLowercase()
+===================================================================================================================
+3.
