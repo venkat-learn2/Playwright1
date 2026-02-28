@@ -19,8 +19,10 @@ Playwright
 =========
 1.TEST layer (your code) - js code , uses playwright test runner , contains test cases and assertions 
 2. Playwright Client(Node.js process) - runs in nodejs , interprets your commands like click(),goto(),sends instrction to the browser()
-3. Browser server(driver process) - when test starts , 1.Playwright launches a browser instance,2. A WebSocket connection is established
-                                    3.Commands are sent via this connection
+3. Browser server(driver process) - when test starts , 
+                                   1.Playwright launches a browser instance,
+                                   2. A WebSocket connection is established
+                                   3.Commands are sent via this connection
 4.Browser engine - Playwright supports:
 
 Chromium (Chrome, Edge)

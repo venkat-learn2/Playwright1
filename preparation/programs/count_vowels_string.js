@@ -13,3 +13,16 @@ function count_vowel(str) {
 }
 
 console.log(count_vowel("automation"))
+
+
+function vowels(str) {
+    let count = 0;
+    let vowels = "AEIOaeiou";
+
+    for (let char of str) {
+        if (vowels.includes(char))
+            count++
+    }
+}
+
+console.log(vowels('test'))

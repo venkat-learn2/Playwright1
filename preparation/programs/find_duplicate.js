@@ -22,3 +22,7 @@ const uniqueArr = arr2.filter((item, index) => {
 })
 
 console.log(uniqueArr)
+
+const testarr = arr2.filter((item, index) => {
+    return arr2.indexOf(item) !== index;
+})

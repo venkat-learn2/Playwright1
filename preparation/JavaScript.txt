@@ -34,4 +34,57 @@
     > toUpperCase()
     > toLowercase()
 ===================================================================================================================
-3.
+3.What is promise ? 
+    > A promise is an Object that represents the result of an async operation
+    > 3 states - Pending , fulfilled(Resolved), Rejected 
+    
+    const myPromise = new Promise((resolve,reject)=>{
+        let success = true;
+        if(success){
+            resolve("task completed")
+        }else{
+            reject("task failed")
+        }
+    })
+
+    myPromise.then((result)=>{
+        console.log(result)
+    }).catch((err)=>{
+        console.log(err)
+    })
+
+    > we use .then to handle the success and use the catch for the error
+
+    > for easier syntax we can use async/await
+
+    async function handlePromise(){
+        try{
+            const result = true;
+            console.log(result)
+        }catch(error){
+            console.log(error)
+        }
+    }
+
+    > await - Wait until the promise is resolved before moving to next line.
+
+    > async/await is a cleaner way to handle promises. 
+    The async keyword makes a function return a promise, 
+    and await pauses execution until the promise is resolved.
+===================================================================================================================
+4. What is Recursion ?
+
+    > A function calling itself until a condition met 
+
+===================================================================================================================
+5.Exception Handling in JS ?
+
+    > Handle runtime error without crashing the program 
+
+    try{
+        // code that may throw error 
+    }catch{
+        // handle the error 
+    }finally{
+        // always runs 
+    }

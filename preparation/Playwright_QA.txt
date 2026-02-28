@@ -270,7 +270,7 @@ The structure includes:
         >Config for environments
 ==================================================================================================
 31. How do you take a screenshots in playwright ? 
-        > playwright supports page level and local level screenshots
+        > playwright supports page level and locator level screenshots
         > page.screenshots() and page.locator.screenshots()
         > for video recording need to config inside playwright.config.js file 
         > for screenshots also we can do the in the use object in the config file 
@@ -350,5 +350,57 @@ The structure includes:
 
         > Collaborate with developers to understand the application behavior and address underlying issues.
 ============================================================================================================
-37.
+37.getByRole vs Locator
+
+        > getByRole is Reccommed by playwright team , very stable because even if developers add some new div it wont make changes 
+        > Based on ARIA Roles it uses the ARIA not the DOM structure 
+        > ARIA (Accessible Rich Internet Applications) is a set of attributes that define roles and accessibility 
+        information for web elements, 
+        allowing tools like Playwright and screen readers to understand element behavior.
         
+        Locator
+        ========
+        > Xpath , CSS 
+
+        Stric Mode
+        ==========
+        > Locator must match only one element 
+        > If multiple elements match that will throw the stirct mode violtion error 
+        > strict mode prevents the flaky tests by forcing unique locators
+        
+============================================================================================================
+38. Best Locator strategies
+        > getByRole()
+        > getByLabel()
+        > getByText()
+        > getByTestId()
+        > Avoid Xpath unless neeeded
+============================================================================================================
+39. Test timeout vs Expect timeout 
+        > test is for entire test , expect is for assertions
+        > default timeout 30s , default timeout 5s
+        > entire test case will , only assertions will fail 
+============================================================================================================
+40.What is trace viewer?
+        > Trace viewer is a debugging UI that allows:
+        > Step-by-step action replay
+        ✔ DOM snapshot inspection
+        ✔ Network request check
+        ✔ Console logs review
+        > on first try always Reccommed for trace 
+        > for video - retain on failure -> videos recorded every time -> if it is pass deleted -> fails videos saves 
+
+        use: {
+  trace: 'on-first-retry',
+  video: 'retain-on-failure',
+  screenshot: 'only-on-failure'
+}
+============================================================================================================
+41.What makes automation stable?
+        ✔ Avoid hard waits
+        ✔ Use proper locators
+        ✔ Isolate test data
+        ✔ Use fixtures
+        ✔ Keep tests atomic
+        ✔ Separate test logic from page logic
+============================================================================================================
