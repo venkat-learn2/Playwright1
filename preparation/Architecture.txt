@@ -8,6 +8,7 @@ selenium
 
 Playwright
 ==========
+
 1.your client and server will connect via web socket Protocol.
 2.Once connnection establish you can send n number request to the playwright server.(handshake)
 3.handshake means both entitiy are connected client and server.
@@ -17,36 +18,83 @@ Playwright
 
 4 layers
 =========
-1.TEST layer (your code) - js code , uses playwright test runner , contains test cases and assertions 
-2. Playwright Client(Node.js process) - runs in nodejs , interprets your commands like click(),goto(),sends instrction to the browser()
-3. Browser server(driver process) - when test starts , 
-                                   1.Playwright launches a browser instance,
-                                   2. A WebSocket connection is established
-                                   3.Commands are sent via this connection
-4.Browser engine - Playwright supports:
+PLAYWRIGHT ARCHITECTURE (CLIENT-SERVER MODEL)
+=============================================
 
-Chromium (Chrome, Edge)
-Firefox
-WebKit (Safari engine)
-=============
-It communicates directly with:
-==============
-Chrome DevTools Protocol (CDP) for Chromium
-Custom protocols for Firefox and WebKit
+1. TEST LAYER (Your Code)
+-------------------------
+- Written in JavaScript / TypeScript
+- Uses Playwright Test Runner
+- Contains:
+    • Test cases
+    • Assertions
+    • Fixtures
+    • Hooks (beforeEach, afterEach)
 
-This makes it:
-=============
-Faster
-More stable
-Less flaky
+This is where automation logic is written.
 
-Playwright uses a client-server architecture where Node.js test scripts communicate 
-directly with browser engines through WebSocket connections, enabling fast, reliable, and parallel automation.
 
+2. PLAYWRIGHT CLIENT (Node.js Process)
+--------------------------------------
+- Runs inside Node.js
+- Interprets commands like:
+    • page.click()
+    • page.goto()
+    • page.fill()
+- Converts them into structured automation instructions
+- Sends instructions to the browser via WebSocket
+
+
+3. BROWSER SERVER (Driver Process)
+-----------------------------------
+When test execution starts:
+
+1. Playwright launches a browser instance
+2. A WebSocket connection is established
+3. Commands are sent via this connection
+
+This driver process acts as a bridge between:
+Node.js  <---->  Browser Engine
+
+
+4. BROWSER ENGINE
+-----------------
+Playwright supports:
+
+• Chromium  (Chrome, Edge)
+• Firefox
+• WebKit    (Safari engine)
+
+Communication Protocols:
+------------------------
+• Chrome DevTools Protocol (CDP) → Chromium
+• Custom protocol → Firefox
+• Custom protocol → WebKit
+
+
+WHY THIS ARCHITECTURE IS POWERFUL
+---------------------------------
+Because Playwright communicates directly with browser engines:
+
+• Faster execution
+• More stable
+• Less flaky
+• Better parallel support
+
+
+OVERALL FLOW
+------------
 Test Script
      ↓
 Playwright Test Runner (Node.js)
      ↓
-Browser Instance (Chromium/Firefox/WebKit)
+Browser Instance (Chromium / Firefox / WebKit)
      ↓
 Web Application
+
+
+FINAL SUMMARY
+-------------
+Playwright uses a client-server architecture where Node.js test scripts
+communicate directly with browser engines through WebSocket connections,
+enabling fast, reliable, and parallel automation.

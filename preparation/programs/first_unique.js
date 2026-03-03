@@ -1,12 +1,12 @@
 function firstUnique(str) {
   const map = {};
 
-  for (let ch of str) {
-    map[ch] = (map[ch] || 0) + 1;
+  for (let char of str) {
+    map[char] = (map[ch] || 0) + 1;
   }
 
-  for (let ch of str) {
-    if (map[ch] === 1) return ch;
+  for (let char of str) {
+    if (map[char] === 1) return ch;
   }
 
   return null;

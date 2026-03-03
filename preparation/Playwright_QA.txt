@@ -154,7 +154,7 @@ Advantages:
         > We can accept , dismiss or provide input to alerts without switching context
         > Auto waiting makes alert simple and reliable
 
-        >   await page.on('dialog', async dialog => {
+        >   page.on('dialog', async dialog => {
             await expect(dialog.type()).toContain('alert');
             await expect(dialog.message()).toContain('I am an alert box!');
             await dialog.accept();

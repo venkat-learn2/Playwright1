@@ -2,10 +2,27 @@ const { test, expect } = require('@playwright/test');
 
 var userid;
 
-test("Get users", async ({ request }) => {
-    const response = await request.get('https://reqres.in/api/users?page=2');
-    console.log(await response.json());
+test.only("Get users", async ({ request }) => {
+    const response = await request.get(
+        'https://reqres.in/api/users?page=2',
+        {
+            headers: {
+                'x-api-key': 'pub_5d9bde00b32adef950ce51c59a0805127ede7004189c474fb215d0dbe0570f9a'
+            }
+        }
+    );
+
+    console.log(await response);
     expect(response.status()).toBe(200);
+});
+
+test('get users values', async (request) => {
+    const response = await request.get('api/end', {
+        headers: {
+            'x-api-key': 'value'
+        }
+    })
+
 })
 
 test("Create user", async ({ request }) => {
@@ -42,3 +59,4 @@ test("Delete user", async ({ request }) => {
     const response = await request.delete('https://reqres.in/api/users/' + userid);
     expect(response.status()).toBe(204);
 })
+

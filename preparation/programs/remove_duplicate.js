@@ -5,12 +5,8 @@ function remove_duplicate(str) {
 console.log(remove_duplicate("automation"))
 
 
-function remove_duplicate1(str) {
-
-    for (let char of str) {
-        let count = 0;
-        
-    }
+function removeDupNum(number) {
+    return [...new Set(number)]
 }
 
-console.log(remove_duplicate1('venkatesh'))
+console.log(removeDupNum([1, 2, 4, 5, 6, 3, 2, 1]))

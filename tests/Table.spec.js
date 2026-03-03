@@ -67,3 +67,10 @@ async function selectProduct(rows, page, name) {
     })
     await matchedRow.locator('input').check();
 }
+
+async function selectPProduct(row, page, name) {
+    const matchingRow = row.filter({
+        has: page.locator('td'),
+        hasText: name
+    })
+}

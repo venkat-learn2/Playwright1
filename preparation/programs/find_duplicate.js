@@ -1,28 +1,38 @@
-const arr = [1, 2, 3, 4, 2, 5, 3, 6, 6];
+// const arr = [1, 2, 3, 4, 2, 5, 3, 6, 6];
 
-const duplicates = arr.filter((item, index) => {
-    return arr.indexOf(item) !== index;
-});
+// const duplicates = arr.filter((item, index) => {
+//     return arr.indexOf(item) !== index;
+// });
 
-console.log(duplicates);
+// console.log(duplicates);
 
-const arr1 = [1, 2, 3, 2, 4, 3, 5];
+// const arr1 = [1, 2, 3, 2, 4, 3, 5];
 
-const unique = arr1.filter((item, index) => {
-    return arr1.indexOf(item) === index;
-});
+// const unique = arr1.filter((item, index) => {
+//     return arr1.indexOf(item) === index;
+// });
 
-console.log(unique);
+// console.log(unique);
 
 
-const arr2 = [1, 2, 3, 2, 4, 3, 5, 6, 8, 9];
+// const arr2 = [1, 2, 3, 2, 4, 3, 5, 6, 8, 9];
 
-const uniqueArr = arr2.filter((item, index) => {
-    return arr2.indexOf(item) === index
+// const uniqueArr = arr2.filter((item, index) => {
+//     return arr2.indexOf(item) === index
+// })
+
+// console.log(uniqueArr)
+
+// const testarr = arr2.filter((item, index) => {
+//     return arr2.indexOf(item) !== index;
+// })
+
+
+const dupArrr = [1, 2, 1, 3, 4, 2, 5];
+
+const findDup = dupArrr.filter((item, index) => {
+    return dupArrr.indexOf(item) !== index
+
 })
 
-console.log(uniqueArr)
-
-const testarr = arr2.filter((item, index) => {
-    return arr2.indexOf(item) !== index;
-})
+console.log(findDup)

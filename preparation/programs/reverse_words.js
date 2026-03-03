@@ -5,3 +5,12 @@ function reverse_word(str) {
 }
 
 console.log(reverse_word("I love Tamil Nadu"));
+
+function revWord(word) {
+
+    let sentence = word.split(" ").reverse().join(" ")
+    return sentence
+
+}
+
+console.log(revWord("I love India"))
