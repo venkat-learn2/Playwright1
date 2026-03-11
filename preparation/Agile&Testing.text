@@ -1,0 +1,107 @@
+1.What is STLC ? 
+    > Software testing lifecycle
+    > It is a structured process followed by the QA team to perform testing activities. 
+    > It includes phases such as Requirement Analysis, Test Planning, Test Case Development, 
+    Test Environment Setup, Test Execution, and Test Cycle Closure 
+    to ensure the application quality before release.
+========================================================================================================================
+2.What is Regression Testing - Functional Testing ?
+    > Ensures that new code changes or bug fixes do not negatively impact existing functionalities.
+========================================================================================================================
+3.What is smoke Testing - FUnctional Testing ?
+    > Smoke testing is a quick check to make sure the main features of the application work and the build is stable enough for further testing.
+========================================================================================================================
+4.What is Sanity Testing - Functional Testing ?
+    > A quick test to verify that a specific bug fix or recent change works as expected and
+     no further issues were introduced to that particular area    
+========================================================================================================================
+5.What is Non Functional Testing ?
+    > Performance Testing: Evaluates how the system performs under a particular workload, assessing speed, stability, and scalability.
+========================================================================================================================
+6. What is blackbox and whitebox testing ?
+    >Black: Testing the functionality of an application without knowing the internal code.
+    >White: Testing the internal code structure and logic of an application.
+========================================================================================================================
+7.Difference between verification and validation ?
+
+    verification | validation 
+    > Checks whether the product is built correctly | Checks whether the correct product is built
+    > Done during development | Done after development
+    > Example: Reviews, inspections | Example: Functional testing
+========================================================================================================================
+8.What is diff b/w severity and priority?
+
+    > Severity - how serious the defect is and how much its affects system functionalities , it is about impact on the application 
+    > Decide by QA like , high , low , Critical
+    > Priority - How soon the bug must be fixed 
+    > Decide by - Product Manager 
+========================================================================================================================
+9.what is Integration Testing ?
+    > Integration testing means checking whether different parts of the application communicate and work together properly.
+========================================================================================================================
+10.What is System Testing ?
+    >System testing is testing the entire application as a complete system to verify that all functionalities work according to the requirements.
+========================================================================================================================
+11.What is UAT(User Acceptane Testing ) Testing ?
+    > User Acceptance Testing is testing performed by end users or business stakeholders to verify 
+    that the system meets business requirements and is ready for release.
+========================================================================================================================
+12.What is Defect lifecycle?
+    > New → Assigned → In Progress → Fixed → Retest → Closed
+    > If the issue still exists after retesting, it will be moved to Reopened.
+========================================================================================================================
+13.What is Agile ? 
+    > Agile is a software development approach where development and testing happen iteratively and incrementally. 
+    Work is divided into small cycles called sprints, allowing faster delivery and continuous feedback from stakeholders.
+===========================================================================================================================================
+14.What is sprints? 
+    > A sprint is a fixed time iteration (usually 2 weeks) where the team completes a 
+      set of planned work items such as user stories, development, and testing.
+===========================================================================================================================================
+15.What is a User Story?
+    > A user story describes a requirement from the end user's perspective
+    > As a user,
+    I want to login to the system
+    So that I can access my account.
+===========================================================================================================================================
+16.What is a Product BackLog?
+    > Product backlog is a prioritized list of features, enhancements and bug fixes maintained by the product owner.
+===========================================================================================================================================
+17.What is a Sprint Backlog?
+    > Sprint backlog is the subset of product backlog items selected for a specific sprint.
+===========================================================================================================================================
+18.What are Agile ceremonies?
+    > Sprint Planning
+
+    > Daily Standup
+
+    > Sprint Review
+
+    > Sprint Retrospective
+
+    > Backlog Grooming
+===========================================================================================================================================
+19.What happens in Sprint Planning?
+    > Team selects user stories from backlog
+
+    > Estimates tasks
+
+    > Defines sprint goals
+
+    > Assigns work to team members.
+===========================================================================================================================================
+20.What is Daily Standup?
+
+    > What did I do yesterday?
+
+    > What will I do today?
+
+    > Any blockers?
+===========================================================================================================================================
+21.What is agile common Explnation ?
+    > In our project we follow Agile methodology with two-week sprints. 
+    During sprint planning we select user stories from the product backlog and estimate story points. 
+    QA team prepares test cases based on acceptance criteria and testing happens along with development. 
+    We also participate in daily standups, sprint reviews, and retrospectives to ensure continuous improvement.
+===========================================================================================================================================
+22.

@@ -30,9 +30,8 @@
 
 const dupArrr = [1, 2, 1, 3, 4, 2, 5];
 
-const findDup = dupArrr.filter((item, index) => {
-    return dupArrr.indexOf(item) !== index
-
+const dup = dupArrr.filter((index, item) => {
+    return dupArrr.indexOf(index) !== item
 })
 
-console.log(findDup)
+console.log(dup)

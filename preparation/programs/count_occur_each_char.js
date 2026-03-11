@@ -41,3 +41,16 @@ function countEachCharrs(str) {
 }
 
 console.log(countEachCharrs('helloo'))
+
+function countEachCharAAA(str) {
+
+    let map = {};
+
+    for (char of str) {
+        map[char] = (map[char] || 0) + 1
+    }
+    return map;
+
+}
+
+console.log(countEachCharAAA('hello'))

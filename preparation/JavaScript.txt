@@ -88,3 +88,54 @@
     }finally{
         // always runs 
     }
+=============================================================================================
+6.let , var , const difference
+    > var is function scoped we can access the variable throughout the function .
+    > let is block level scoped cannot access outside of the block {}.
+    > var redeclaration allowed var a = 10; var a = 20 ; no error 
+    > let redeclaration not allowed let a = 10;let a = 20;throw error 
+    > both are hoister for var it is undefined , for let it is reference error
+    > const does not allow reassignment const a =10,a = 30 ; throws error TypeError: Assignment to constant variable
+    > const also block level scope like let
+    > const does not allow declaration also 
+========================================================================================================================================
+7.What is Hoisting ? 
+    > Hoisting means JavaScript moves variable and function declarations to the top of their scope before execution.
+    > console.log(a);
+        var a = 10;  undefined 
+========================================================================================================================================
+8.What is Closure?
+    > A closure is when a function remembers variables from its outer scope even after the outer function has finished execution.
+    > 
+========================================================================================================================================
+9.What is the Temporal Dead Zone (TDZ)?
+    > The time between variable hoisting and declaration where a variable cannot be accessed.
+    > Applies to let and const.
+    > console.log(a); let a = 10; --> result = reference error 
+========================================================================================================================================
+10.What is the difference between == and ===?
+    > == Compare the values only
+    > === Compare the values and respective data types 
+========================================================================================================================================
+11.What is the difference between null and undefined?
+    > by default or intentionally value should be empty null
+    > variable declared value not assigned is undefined
+========================================================================================================================================
+12.What is the difference between map, filter, and reduce?
+    > map - transform array 
+    > filter - select elemets 
+    > reduce - accumulate the results 
+    > arr.map(x => x*2)
+      arr.filter(x => x>5)
+      arr.reduce((a,b)=>a+b)
+========================================================================================================================================
+13.What is this in JavaScript?
+    > this refers to the object that is currently executing the function.
+    > const user = {
+        name: "Venkat",
+        greet(){
+        console.log(this.name);
+        }   
+    }   
+========================================================================================================================================
+

@@ -1,0 +1,4 @@
+1. I worked on product called inforiver that is business reporting and analytics tool thats build top of powerBI.
+2. It helps users create advanced reports, dashboards, and financial reports easily
+3. It also provides Excel-like reporting, planning, forecasting, and data write-back features
+4. It is mainly used by business and finance teams to analyze data and create professional reports without much coding.

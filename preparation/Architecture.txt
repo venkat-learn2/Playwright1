@@ -98,3 +98,44 @@ FINAL SUMMARY
 Playwright uses a client-server architecture where Node.js test scripts
 communicate directly with browser engines through WebSocket connections,
 enabling fast, reliable, and parallel automation.
+
+When we run a Playwright test, the test script sends commands to the Playwright client library, 
+which communicates with the browser server. 
+The browser server then executes actions inside the browser engine and interacts with the application
+
+=============================================================================================================================================
+1.Test Script Layer (Automation Code)
+     > this is your test code presence written using playwright
+     > your Playwright API like click(),goto(),fill() these commands do not directly interact with the browser.
+     > They first go to the playwright client.
+2.Playwright Test Runner
+     > This layer manages test execution.
+     > Responsibilities:
+          > Running tests
+
+          > Parallel execution
+
+          > Fixtures (page, browser, context)
+
+          > Test retries
+
+          > Test reporting
+
+          > Hooks (beforeEach, afterEach)
+     
+     > So the runner controls how the test runs.
+3.Playwright Client (Node.js Process)
+     > This is the core communication layer.
+     > Converts your commands into Playwright protocol messages
+     > Sends commands to the browser server
+     > Receives responses
+     > It is running in the Node.js environment
+4.Browser server
+     > Each browser is launched with a Playwright driver process.It acts like a bridge between Playwright and browser engines.
+     > Responsibilities:
+          > Receives commands
+          > Executes them inside browser
+          > Returns response
+5.Browser Engines
+     > Playwright supports 3 browser engines , Chromium,Firefox,Webkit
+     > Playwright interacts with all browsers using same API.
