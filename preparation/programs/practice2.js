@@ -125,3 +125,37 @@ let a = 10; let b = 20;
 // }
 
 // console.log(firstUnique('llop'))
+
+// function SecondLargeNum(arr) {
+
+//     let firstLargeNum = -Infinity;
+//     let secondLargeNum = -Infinity;
+
+//     for (let elements of arr) {
+//         if (elements > firstLargeNum) {
+//             secondLargeNum = firstLargeNum
+//             firstLargeNum = elements
+//         }
+//         else if (elements > secondLargeNum && elements !== firstLargeNum) {
+//             secondLargeNum = elements
+//         }
+//     }
+//     return secondLargeNum;
+
+// }
+
+// console.log(SecondLargeNum([12, 12, 45, 67, 11, 4, 5, 9]))
+
+
+function fibonacci(N) {
+
+    let a = 0;
+    let b = 1;
+
+    for (let i = 0; i < N; i++) {
+        [a, b] = [b, a + b]
+    }
+    return a;
+}
+
+console.log(fibonacci(10))

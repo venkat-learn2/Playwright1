@@ -120,3 +120,18 @@ Playwright uses a client-server architecture where the test scripts written in N
 communicate with browser engines through a WebSocket connection.
 The Playwright client sends automation commands to the browser server, 
 which executes them inside browser engines like Chromium, Firefox, and WebKit to interact with the web application.
+==========================================================
+playwright-project
+ ├── tests
+ │     └── test files
+ ├── pages
+ │     └── page objects
+ ├── fixtures
+ │     └── custom fixtures
+ ├── utils
+ │     └── helper functions
+ ├── test-data
+ │     └── json or csv test data
+ ├── playwright.config.js
+ └── reports
+       └── html reports

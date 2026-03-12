@@ -1,21 +1,19 @@
-function secondLargest(arr) {
-
-    let largest = -Infinity;
-    let secondLargest = -Infinity;
+function findSecondLargestValue(arr) {
+    let firstLargeNum = -Infinity;
+    let secondLargeNum = -Infinity;
 
     for (let num of arr) {
-
-        if (num > largest) {
-            secondLargest = largest;
-            largest = num;
+        if (num > firstLargeNum) {
+            secondLargeNum = firstLargeNum;
+            firstLargeNum = num;
         }
-
-        else if (num > secondLargest && num !== largest) {
-            secondLargest = num;
+        else if (num > secondLargeNum && num !== firstLargeNum) {
+            secondLargeNum = num;
         }
     }
+    return secondLargeNum;
 
-    return secondLargest;
 }
 
-console.log(secondLargest([10, 5, 20, 8, 20]));
+console.log(findSecondLargestValue([2, 4, 1, 5, 6, 2]))
+// expected out - 5

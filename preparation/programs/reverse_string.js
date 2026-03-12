@@ -18,3 +18,14 @@ function revString(str) {
 }
 
 console.log(revString('hello'))
+
+function reverseAndCapitalize(str) {
+
+    return str
+        .split(" ")                    // convert string to array of words
+        .reverse()                     // reverse the words
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ");                    // convert array back to string
+}
+
+console.log(reverseAndCapitalize("hello world from javascript"));

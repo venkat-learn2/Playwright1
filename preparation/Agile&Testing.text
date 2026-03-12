@@ -104,4 +104,20 @@
     QA team prepares test cases based on acceptance criteria and testing happens along with development. 
     We also participate in daily standups, sprint reviews, and retrospectives to ensure continuous improvement.
 ===========================================================================================================================================
-22.
+22.BDD vs TDD
+    > TDD - Write Test → Write Code → Refactor -> Used mostly by developers for unit testing.
+    > BDD - Focuses on business behavior -> Uses Gherkin syntax: -> Given When Then 
+===========================================================================================================================================
+23.CI/CD Pipeline
+    > Developer pushes code → GitHub
+        ↓
+    CI Pipeline triggers
+            ↓
+    Install dependencies
+            ↓
+    Run Playwright tests
+            ↓
+    Generate reports
+            ↓
+    Send results
+===========================================================================================================================================
