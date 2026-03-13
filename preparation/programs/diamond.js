@@ -9,4 +9,4 @@ function diamond(n) {
     }
 }
 
-diamond(4);
+diamond(1);
