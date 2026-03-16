@@ -2,3 +2,23 @@
 2. It helps users create advanced reports, dashboards, and financial reports easily
 3. It also provides Excel-like reporting, planning, forecasting, and data write-back features
 4. It is mainly used by business and finance teams to analyze data and create professional reports without much coding.
+=========================================================================================================================
+> I worked on a product called Inforiver. It is an advanced reporting and analytics solution built on top of Microsoft Power BI.
+
+> Normally Power BI is mainly used for dashboards and visualization, 
+but Inforiver extends its capabilities by providing advanced features like financial reporting, 
+planning, and data analysis without writing any code.
+
+> In BFSI domain, this is very useful because banks and financial institutions deal with a large amount of data such as customer transactions, 
+loan details, branch performance, and financial reports. 
+
+> Using Inforiver, 
+  business users can create detailed reports, analyze financial data, and generate insights directly inside Power BI.
+
+> For example, banks can build dashboards to monitor loan portfolios, analyze revenue, track branch performance, 
+and forecast future financial trends.
+
+> So overall, Inforiver helps organizations convert raw business data into meaningful reports and dashboards, 
+which helps management take better business decisions
+
+> Famous cutomer Accenture , Idigital link , IBM , Ferrari,Citrix 

@@ -1,0 +1,10 @@
+What is true AI Agent ? 
+
+    > Think , Act,Observe
+    > Its work like our younger brother , example: go to shop and buy some soamosa 
+    > LLM (Brain) , you ask something you will get something
+    > AI Agent means LLM(Brain) + Memory which can able to use some tools - goal oriented results
+    > LLM is output based 
+    > these LLM is cannot directly connect with team,slack,jira we need a protocal certain rules that is MCP(Model Context Protocol)
+    > MCP - open source standard for connecting AI application to external system
+    > True Agent AI = Brain(LLM+Prompt) ,Tools (API/Webhooks) and ability to think and act , contrast with workflows

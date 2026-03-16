@@ -54,6 +54,14 @@ test('Alert with Prompt ', async ({ page }) => {
         expect(dialog.defaultValue()).toContain('Harry Potter');
         await dialog.accept('Venkat');
     })
+
+    page.on('dialog',async dialog=>{
+        expect(dialog.type().toContain('prompt'));
+        expect(dialog.message().toContain('Please enter name'))
+        await dialog.accept('Venkat');
+        
+    })
+
     await page.locator("//button[@id='promptBtn']").click();
     await expect(page.locator("//p[@id='demo']")).toContainText("Hello Venkat! How are you today?");
 

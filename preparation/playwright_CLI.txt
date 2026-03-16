@@ -1,0 +1,28 @@
+npx playwright test => run all the test cases 
+npx playwright test --headed => run all the test cases with UI mode headed 
+npx playwright test --headless => run all the test cases with headless mode 
+npx playwright test login.spec.ts => run a specific test case 
+npx playwright test -g "login test" => run the specific test by test title 
+npx playwright test --project=chromium => run the case with specific browser
+npx playwright test --debug  => it will open the playwright inspector 
+npx playwright test --trace on => it will Collects trace file for debugging.
+npx playwright show-trace trace.zip => Opens trace viewer to analyze failed tests.
+npx playwright show-report => Opens HTML test report in browser.
+npx playwright test --workers=4 => Runs tests in parallel using 4 workers.
+npx playwright install => Downloads browsers used by Playwright:Chromium,Firefox,WebKit
+npx playwright install chromium => Install Specific Browser
+npx playwright codegen => Opens browser and records actions.Playwright automatically generates codes 
+npx playwright test --last-failed => Runs only previously failed tests.
+npx playwright test --headed --slow-mo=1000 => Adds delay between actions, Useful for demo or debugging.
+npx playwright test --list => Shows all available tests.
+npx playwright test --update-snapshots => Used in visual testing.
+npm init playwright@latest => Initialize Playwright Project
+npx playwright test --grep "@smoke" => it will run only the tag speficied test cases 
+npx playwright test --grep-invert "@regression" => it will exlcude the tag speficied test cases 
+npx playwright test --retries=2 => If a test fails, Playwright retries it 2 more times.Used to handle flaky tests.
+npx playwright test --repeat-each=5 => Runs each test 5 times.Used to identify unstable tests.
+npx playwright test --max-failures=2 => Stops execution after 2 test failures.Useful in CI pipelines.
+npx playwright test --timeout=60000 => Sets maximum time for each test (60 seconds).
+npx playwright test --shard=1/3  => Splits tests across multiple machines.Machine 1 → 1/3,Machine 2 → 2/3,Machine 3 → 3/3
+npx playwright test --reporter=html => Generates HTML report.Line,List,Junit
+npx playwright test --config=playwright.config.ts => Run with specific config file
